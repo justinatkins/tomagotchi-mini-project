@@ -49,6 +49,9 @@ body {
 
 #feed, #lights, #play {
 	background-color: #64489B;
+	font-size: 25px;
+	border-radius: 20px;
+	border: 6px solid black;
 	height: 150px;
 	width: 150px;
 }
