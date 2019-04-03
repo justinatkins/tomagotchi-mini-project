@@ -1,70 +1,58 @@
 body {
-	background-color: #20B2AA; 
-	position: fixed;
-	width: 200px;
-	margin: 0px auto;
+	background: url("https://bit.ly/2IetOXF");
+	background-color: lavender; 
 }
 #name {
 	font-size: 20px;
 	text-align: center;
 	display: inline-block;
 }
-#pet-background {
-	/*background-image: url(https://bit.ly/2IetOXF);*/
-	background-image: no-repeat;
-	background-position: center bottom;
-	background-size: cover;
-	position: fixed;
-	width: 400px;
-	height: 400px;
-	border: 4px solid black;
-	border-radius: 12px;
+
+#container {
+	display: flex;
+	align-content: center;
+	justify-content: space-around;
+	flex-direction: column;
 }
 
-#pet {
-	background-image: url(http://archive.boston.com/ae/movies/blog/ignignokt.gif);
-	background-image: no-repeat;
-	background-image: center bottom;
-	position: static;
-	width: 50%;
-	height:50%;
+#petpic {
+	width: 200px;
+	height:200px;
 }
-
-.buttons[type=button] {
-	width:  5vh;
-  	height: 5vh;
+.stats {
 	display: flex;
 	flex-direction: row;
-	align-items: flex-end;
 	justify-content: space-around;
-	background: #FF4500;
-	width: 80%;
-	height: 80%;
+	height: 500px;
+	width: 500px;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background: blue;
 	font-size: 20px;
 	font-weight: 900;
 	border-radius: 20px;
-	margin: 13px;
-	margin-top: 10px;
+	height: 100px;
 }
 
-#hungry {
-	position: absolute;
-	bottom: 5%;
+#Hunger,#Sleepy,#Bored {
 	background: #64489B;
 	font: monoton;
 	font-size: 35px;
-	color: solid black;
-	border: 6px solid black;
-	border-radius: 50px;
-	width: 30%
-	height: 30%;
+/*	color: solid black;
+	border: 6px solid black;*/
+	width: 100px;
+	height: 100px;
 }
 
-#hungry:hover {
+/*#hungry:hover {
 	background-color: #4B0082;
-}
+}*/
 
-#sleepy {
+/*#sleepy {
 	position: absolute;
 	bottom: 5%;
     right:5%;
@@ -73,13 +61,13 @@ body {
 	color: solid black;
 	border: 6px solid black;
 	border-radius: 50px;
-}
+}*/
 
-#sleepy:hover {
+/*#sleepy:hover {
 	background-color: #4B0082;
-}
+}*/
 
-#bored {
+/*#bored {
 	position: center bottom;
 	bottom: 5%;
 	background-color: #64489B;
@@ -87,11 +75,11 @@ body {
 	color: solid black;
 	border: 6px solid black;
 	border-radius: 50px;
-}
+}*/
 
-#bored:hover {
+/*#bored:hover {
 	background-color: #4B0082;
-}
+}*/
 
 #timer {
 	color: solid black;

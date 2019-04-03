@@ -2,7 +2,7 @@ console.log('Welcome to Tomagotchi Town')
 
 
 class pet {
-	constructor(name){
+	constructor(name, hungry, sleepy, boredom, age){
 		this.name = name;
 		this.hungry = 0;
 		this.sleepy = 0;
@@ -14,12 +14,10 @@ class pet {
 
 }
 
-
 const game = {
   	time: 0,
   	start(){
-
-
+  		$('#body').append(`<img id="pet" src="http://archive.boston.com/ae/movies/blog/ignignokt.gif">`)
 		const gameTimer = setInterval(() => {
 			if(this.time === 60){
         	console.log('Your pet has died....');
