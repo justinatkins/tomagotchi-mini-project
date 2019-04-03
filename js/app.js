@@ -1,56 +1,93 @@
 console.log('Welcome to Tomagotchi Town')
 
 
-class pet {
-	constructor(name, hungry, sleepy, boredom, age){
+class Pet {
+	constructor(name){
 		this.name = name;
-		this.hungry = 0;
+		this.hunger = 0;
 		this.sleepy = 0;
-		this.boredom = 0;
+		this.bored = 0;
 		this.age = 0
 
 // function startGame() {
 // 	myGamePiece = new component (30, 30, "http://archive.boston.com/ae/movies/blog/ignignokt.gif", 10, 120, "ignignokt");
+	}
+};
 
-}
+const toma = new Pet ('', 0, 0, 0, 0, 'sleep')
+
+
 
 const game = {
   	time: 0,
+  	intervalId: null,
   	start(){
-  		$('#body').append(`<img id="pet" src="http://archive.boston.com/ae/movies/blog/ignignokt.gif">`)
-		const gameTimer = setInterval(() => {
-			if(this.time === 60){
-        	console.log('Your pet has died....');
-	       	clearInterval(gameTimer);
-        	}
+  		toma.name= $('#input-box').val()
+  		console.log('the game has started');
 
-        	this.time += 1;
+  		this.intervalId = setInterval(() => {
+  			this.time += 1
+  			console.log(this.time);
+ 			this.getOlder()
+ 			this.hungry()
+ 			this.boredom()
+  		}, 250)
+  	},
 
-        	console.log(this.time);
-    	}, 1000);
-    }
+  	hungry(){
+  		if(this.time % 3 === 0){
+  			toma.hunger++
+  			console.log("toma hunger level is " + toma.hunger)
+  		}
+  	},
+
+  	boredom(){
+  		if (this.time % 4 === 0) {
+  			toma.bored += 1
+  			console.log("toma boredom level is  " + toma.bored)
+  		}
+  	},
+
+  	getOlder(){
+  		if (this.time % 10 === 0) {
+  			toma.age += 1
+  			console.log("toma age is  " + toma.age)
+  		}
+  	}
+	    
+
+
 }
 
-game.start();
 
-$('form').on('go', (e) => {
-    game.startGame();
-    event.preventDefault();
-    
-}
 
-$('#hungry').on('click', () => {
-    game.hungry();
+$('form').on('submit', (e) => {
+    game.start();
+    console.log('form has been submitted');
+    e.preventDefault();
+    const nickName = $('#input-box').val();
+    console.log(nickName)
 
 })
 
-$('#bored').on('click', () => {
-    game.bored();
+$('#feed').on('click', () => {
+	console.log('feed was clicked');
+})
+
+// $('#feed').on('click', () => {
+//     // game.hungry();
+//     console.log("feed button was clicked")
+// }
+
+$('#play').on('click', () => {
+    // game.bored();
+    console.log("play button was clicked")
 
 })
 
-$('#sleepy').on('click', () => {
-    game.sleepy();
+$('#lights').on('click', () => {
+    // game.sleepy();
+    console.log("lights button was clicked")
 
 });
 
